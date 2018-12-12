@@ -24,8 +24,8 @@ def contacted(clientsocket):
             print(addr)
     else:
    #    if(mssg='RequestForService'):
-        print("length of wsdl array: ", len(wsdl))
-        r = random.randint(0,len(wsdl))
+        r = random.randint(0,len(wsdl)-1)
+        print("length of wsdl array: ", len(wsdl), " random value picked: ", r)
         wsdl_response = wsdl[r]
         clientsocket.send(wsdl_response)
 
