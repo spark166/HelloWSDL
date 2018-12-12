@@ -2,7 +2,7 @@
 Multi-threaded server.  Once a connection is accepted, a new 
 thread is created to serve the client.
 """
-
+import random
 import socket
 from thread import start_new_thread
 import time
@@ -22,9 +22,15 @@ def contacted(clientsocket):
         print('wsdl array has: ')
         for addr in wsdl:
             print(addr)
-    
+    else:
+   #    if(mssg='RequestForService'):
+        print("length of wsdl array: ", len(wsdl))
+        r = random.randint(0,len(wsdl))
+        wsdl_response = wsdl[r]
+        clientsocket.send(wsdl_response)
+
     #delay added to test multi-threading parallelism
-    time.sleep(1)
+    #time.sleep(1)
     #send reverse message to the client
     #clientsocket.send(mssg_reverse)
     clientsocket.close()
