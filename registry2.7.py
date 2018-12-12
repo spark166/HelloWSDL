@@ -17,15 +17,18 @@ wsdl = []  #array to hold wsdl addresses
 def contacted(clientsocket):
     #receive string from client
     mssg = clientsocket.recv(1024)
+    # if message received is a wsdl
     if (mssg[0:4] == 'http'):
         wsdl.append(mssg)
         print('wsdl array has: ')
         for addr in wsdl:
             print(addr)
+    # for request for service
     else:
-
-   #    if(mssg='RequestForService'):
-        r = random.randint(0,len(wsdl)-1)
+        if (len(wsdl)==1):
+            r=0
+        else:
+            r = random.randint(0,len(wsdl)-1)
         print("length of wsdl array: ", len(wsdl), " random value picked: ", r)
         wsdl_response = wsdl[r]
         clientsocket.send(wsdl_response)

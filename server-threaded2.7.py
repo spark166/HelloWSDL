@@ -23,6 +23,7 @@ def contacted(clientsocket):
         for addr in wsdl:
             print(addr)
     else:
+
    #    if(mssg='RequestForService'):
         r = random.randint(0,len(wsdl)-1)
         print("length of wsdl array: ", len(wsdl), " random value picked: ", r)
