@@ -1,7 +1,7 @@
 from zeep import Client
 import socket  #socket library
 
-PORT = 1234
+PORT = 12345
 host = '127.0.0.1'  #localhost
 #host = socket.gethostname()  #return a hostname of this machine
 

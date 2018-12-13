@@ -23,8 +23,10 @@ for line in lines:
 
 
 
-PORT = 1234
-host = '127.0.0.1'  #localhost
+PORT = 12345
+#host = '127.0.0.1'  #localhost
+host = '130.85.241.172'  #localhost
+
 #host = socket.gethostname()  #return a hostname of this machine
 
 #create a socket object with IPv4 and TCP protocol

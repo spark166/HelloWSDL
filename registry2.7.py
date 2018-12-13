@@ -7,8 +7,9 @@ import socket
 from thread import start_new_thread
 import time
 
-PORT = 1234
-host = '127.0.0.1'  #localhost
+PORT = 12345
+host = '130.85.241.172'  #localhost
+#host = '127.0.0.1'  #localhost
 #host = socket.gethostname()  #return this machine's hostname
 
 wsdl = []  #array to hold wsdl addresses
@@ -29,7 +30,7 @@ def contacted(clientsocket):
             r=0
         else:
             r = random.randint(0,len(wsdl)-1)
-        print("length of wsdl array: ", len(wsdl), " random value picked: ", r)
+        print("length of wsdl array: ", len(wsdl), " random value selected: ", r)
         wsdl_response = wsdl[r]
         clientsocket.send(wsdl_response)
 
